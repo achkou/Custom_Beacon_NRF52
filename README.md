@@ -1,5 +1,9 @@
 # STOP-COVID19 IoT device.
 
+## Preambule
+
+A standard RSSI signal, for reliable data via an autonomous connected object (beacon). 
+without Smartphone or Internet connection.
 
 This example is meant to be used togheter with the examples of the NORDIC SDK15. 
 and modified to make it well and customizebl to our needs
