@@ -123,8 +123,8 @@
 #define CENTRAL_SCANNING_LED            BSP_BOARD_LED_0
 #define CENTRAL_CONNECTED_LED           BSP_BOARD_LED_1
 
-#define DEVICE_NAME                     "STOP-COVID19"                                     /**< Name of device used for advertising. */
-#define MANUFACTURER_NAME               "Casky"                       /**< Manufacturer. Will be passed to Device Information Service. */
+#define DEVICE_NAME                     "STOP-COVID19"                              /**< Name of device used for advertising. */
+#define MANUFACTURER_NAME               "CASKY"                                     /**< Manufacturer. Will be passed to Device Information Service. */
 #define APP_ADV_INTERVAL                300                                         /**< The advertising interval (in units of 0.625 ms). This value corresponds to 187.5 ms. */
 
 #define APP_ADV_DURATION                18000                                       /**< The advertising duration (180 seconds) in units of 10 milliseconds. */
@@ -191,7 +191,7 @@ static bool run_time_updates = false;
 /**@brief names which the central applications will scan for, and which will be advertised by the peripherals.
  *  if these are set to empty strings, the UUIDs defined below will be used
  */
-static char const m_target_periph_name[] = "v2CASKYv2";
+static char const m_target_periph_name[] = "";
 
 /**@brief our uuid filter . */
 static ble_uuid_t const target_uuid =
@@ -435,11 +435,7 @@ static void my_fds_evt_handler(fds_evt_t const * const p_fds_evt)
 static ret_code_t fds_test_write(void)
 {
 
-         uint8_t  m_deadbeef[9] = {0xf0,0x18,0x98,0xcf,0xd1,0x7d,0xfe,0xff,0xef};
-        // static uint8_t const m_deadbeef[6] = {0xf0,0x18,0x98,0xcf,0xd1,0x7d};
-        // static uint32_t const m_deadbeef[2] = {0xDEADBEEF,0xBAADF00D};
-        //static uint8_t const m_deadbeef[8] = {0x1,0x2,0x3,0x4,0x51,0x62,0x73,0x84};
-
+        uint8_t  m_deadbeef[9] = {0xf0,0x18,0x98,0xcf,0xd1,0x7d,0xfe,0xff,0xef};
         fds_record_t        record;
         fds_record_desc_t   record_desc;
 
@@ -571,7 +567,7 @@ static ret_code_t fds_test_init (void)
 
 
 
-//****************************FDS flash sauvgarde*********
+//****************************FDS flash memory saving*********
 
 
 
@@ -714,9 +710,7 @@ bool Read =false;
 
 uint8_t  macbeef[8] ;
 uint8_t  macbeef2[8] = {0xf0,0x18,0x98,0xcf,0xd1,0x7d,0x05,0x03};
-
 int in;
-
 
 int pro1=0;int cnt1=0;
 int pro2=0;int cnt2=0;
@@ -1020,27 +1014,6 @@ static void on_adv_report(ble_gap_evt_adv_report_t const * p_adv_report)
             MacAdrsse[5]=p_adv_report->peer_addr.addr[5];
             MacAdrsse[6]=now->tm_mon+1;
             MacAdrsse[7]=now->tm_mday;
-
-
-
-
-            // printf( "m: %02d d:%02d \n", now->tm_mon+1, now->tm_mday);
-            // printBuff(MacAdrsse,8);
-
-            // kayn = verifyRead(MacAdrsse);
-            //  if (kayn==true)
-            //  {
-            //      //printf("kayn\n");
-            //     printf("..");
-            //  }else{
-
-            //      // writeFDS(MacAdrsse);
-
-            //  }
-                 // printf("\n");
-                 // printf( "m: %02d d:%02d \n", now->tm_mon+1, now->tm_mday);
-
-                 //printBuff(MacAdrsse,8);
 
                     if (verifyMac(MacAdrsse,Mac1)==false&&verifyMac(MacAdrsse,Mac2)==false&& verifyMac(MacAdrsse,Mac3)==false&& cnt1==0 && prev1==false)
                     {
