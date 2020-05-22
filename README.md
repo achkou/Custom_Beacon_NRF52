@@ -33,7 +33,7 @@ This example is meant to be used togheter with the examples of the NORDIC SDK15.
 
 Other kits, dongles and software versions might work as well, but this will not be covered here.
 
-To compile it download the project files and copy the folder "casky_externe" to "your_SDK_folder/examples/ble_central_and_peripheral/experimental/Custom_beacon_date".
+To compile it download the project files and copy the folder "Custom_beacon_date" to "your_SDK_folder/examples/ble_central_and_peripheral/experimental/Custom_beacon_date".
 
 Please post any questions about this project on https://devzone.nordicsemi.com/questions/.
 
