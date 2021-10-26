@@ -60,4 +60,4 @@ for any technical information, please do contact: ao@casky.io
 for business information, partnership or support please do contact: ak@casky.io
 
 
-##### Version 0.7.0
+##### Version 0.7.1
